@@ -20,27 +20,17 @@ int main(){
     return 0;
 }
 void stat(const double A[],int N,double B[]){
-    double sum = 0 , sumtwo = 0, sumthree = 1.0 , sum_h = 0;
-     double max = A[0], min = A[0] ;  
+    double sum = 0 , sumtwo = 0, sumthree = 1.0 ;
     for(int i = 0; i < N; i++){
         sum += A[i];
         sumtwo += A[i]*A[i];
         sumthree *= A[i];
-        sum_h += 1.0 / A[i];
-         
-         if (max < A[i]){
-            max = A[i];
-         }
-         if (min > A[i]){
-            min = A[i];
-         }
-         
-         
-    }       
+    }
+        
+        
+        
+        
         B[0] = sum / N;
         B[1] = sqrt(((sumtwo)/N) - B[0] * B[0] );
         B[2] = pow((sumthree),1.0/N)  ;
-        B[3] = N / sum_h;
-        B[4] = max;
-        B[5] = min;
 }
